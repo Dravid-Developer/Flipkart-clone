@@ -17,12 +17,13 @@ const InputSearchBase = styled(InputBase)`
 const SearchIconWrapper = styled(Box)`
   color: blue;
   padding: 5px;
+  display: flex;
 `;
 
 const Search = () => {
   return (
     <SearchContainer>
-      <InputSearchBase placeholder="warm welcome chitapa" />
+      <InputSearchBase placeholder="Search for products, brands and more" />
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
