@@ -3,7 +3,6 @@ import Product from "./models/product.schema.js";
 
 const DefaultData = async () => {
   try {
-    await Product.deleteMany({});
     await Product.insertMany(products);
     console.log("product exported");
   } catch (error) {
