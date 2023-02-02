@@ -2,6 +2,12 @@ import User from "../models/userSchema.js";
 
 export const userSignup = async (req, res) => {
   try {
+    // to ensure unique username
+    const exist = await User.findOne({ username: req.body.username });
+    if (exist) {
+      return res.status(401).json({ message: "Usernme already exist" });
+    }
+
     const user = req.body;
     const newUser = new User(user);
     await newUser.save();
